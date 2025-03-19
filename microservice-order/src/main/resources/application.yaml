@@ -7,7 +7,8 @@ spring:
 
  data:
    mongodb:
-     uri: mongodb+srv://mkmongouser:Secret_Password@cluster0.yu4x6.mongodb.net
+     #uri: mongodb+srv://mkmongouser:Secret_Password@cluster0.yu4x6.mongodb.net
+     uri: mongodb+srv://AdminUser:123456qwerty@localhost:27017/CustomerOrderDB/collection
      database: order
 
 server:

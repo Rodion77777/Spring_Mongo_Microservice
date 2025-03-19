@@ -1,7 +1,7 @@
 package microservice.order.microserviceorder.rest;
 
-import microservice.module.spring_mongo_microservice.domain.Health;
-import microservice.module.spring_mongo_microservice.domain.HealthStatus;
+import microservice.order.microserviceorder.domain.Health;
+import microservice.order.microserviceorder.domain.HealthStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

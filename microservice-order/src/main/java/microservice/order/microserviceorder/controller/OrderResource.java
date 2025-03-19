@@ -1,9 +1,9 @@
 package microservice.order.microserviceorder.controller;
 
 import jakarta.validation.Valid;
-import microservice.module.spring_mongo_microservice.domain.Order;
-import microservice.module.spring_mongo_microservice.repository.OrderRepository;
-import microservice.module.spring_mongo_microservice.service.OrderService;
+import microservice.order.microserviceorder.domain.Order;
+import microservice.order.microserviceorder.repository.OrderRepository;
+import microservice.order.microserviceorder.service.OrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

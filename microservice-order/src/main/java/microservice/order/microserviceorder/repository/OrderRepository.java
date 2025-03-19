@@ -1,6 +1,6 @@
 package microservice.order.microserviceorder.repository;
 
-import microservice.module.spring_mongo_microservice.domain.Order;
+import microservice.order.microserviceorder.domain.Order;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
