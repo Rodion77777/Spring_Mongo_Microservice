@@ -1,2 +1,2 @@
 rootProject.name = 'Spring_Mongo_Microservice'
-include('microservice-order')
+include 'microservice-order'
