@@ -1,4 +1,4 @@
-package microservice.order.microserviceorder.controller;
+package microservice.order.microserviceorder.web.rest;
 
 import jakarta.validation.Valid;
 import microservice.order.microserviceorder.domain.Order;

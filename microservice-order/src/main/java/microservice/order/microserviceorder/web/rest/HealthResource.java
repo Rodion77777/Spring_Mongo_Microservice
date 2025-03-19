@@ -1,4 +1,4 @@
-package microservice.order.microserviceorder.rest;
+package microservice.order.microserviceorder.web.rest;
 
 import microservice.order.microserviceorder.domain.Health;
 import microservice.order.microserviceorder.domain.HealthStatus;
