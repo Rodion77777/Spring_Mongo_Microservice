@@ -1,7 +1,7 @@
 package microservice.customer.microservicecustomer.web.rest;
 
-import microservice.order.microserviceorder.domain.Health;
-import microservice.order.microserviceorder.domain.HealthStatus;
+import microservice.customer.microservicecustomer.domain.Health;
+import microservice.customer.microservicecustomer.domain.HealthStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;

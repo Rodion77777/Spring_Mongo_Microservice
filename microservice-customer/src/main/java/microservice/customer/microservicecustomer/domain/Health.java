@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import microservice.order.microserviceorder.domain.HealthStatus;
+import microservice.customer.microservicecustomer.domain.HealthStatus;
 
 @Data
 @NoArgsConstructor
