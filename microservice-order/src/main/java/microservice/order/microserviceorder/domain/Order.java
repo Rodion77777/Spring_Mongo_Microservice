@@ -1,4 +1,4 @@
-package microservice.module.spring_mongo_microservice.domain;
+package microservice.order.microserviceorder.domain;
 
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
@@ -7,6 +7,8 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import microservice.module.spring_mongo_microservice.domain.OrderStatus;
+import microservice.module.spring_mongo_microservice.domain.PaymentType;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;

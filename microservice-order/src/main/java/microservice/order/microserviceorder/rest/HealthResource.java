@@ -1,4 +1,4 @@
-package microservice.module.spring_mongo_microservice.web.rest;
+package microservice.order.microserviceorder.rest;
 
 import microservice.module.spring_mongo_microservice.domain.Health;
 import microservice.module.spring_mongo_microservice.domain.HealthStatus;

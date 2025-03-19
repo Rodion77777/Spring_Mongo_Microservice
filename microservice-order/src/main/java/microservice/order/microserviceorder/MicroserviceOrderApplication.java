@@ -1,14 +1,15 @@
-package microservice.module.spring_mongo_microservice;
+package microservice.order.microserviceorder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;
 
 @SpringBootApplication
-public class SpringMongoMicroserviceApplication {
+@EnableMongoAuditing
+public class MicroserviceOrderApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringMongoMicroserviceApplication.class, args);
+        SpringApplication.run(MicroserviceOrderApplication.class, args);
     }
 
 }

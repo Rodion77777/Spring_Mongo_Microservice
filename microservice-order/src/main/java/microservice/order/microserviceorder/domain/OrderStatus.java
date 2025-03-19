@@ -1,4 +1,4 @@
-package microservice.module.spring_mongo_microservice.domain;
+package microservice.order.microserviceorder.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
