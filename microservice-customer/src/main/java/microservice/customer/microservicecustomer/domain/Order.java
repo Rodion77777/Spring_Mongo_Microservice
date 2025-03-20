@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.data.annotation.Id;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -14,6 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 public class Order implements Serializable
 {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
