@@ -10,16 +10,18 @@ import org.springframework.data.annotation.Version;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
-@Document
+@Document(collection = "customer")
 @Data
 @NoArgsConstructor
 public class Customer implements Serializable
 {
+    @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
