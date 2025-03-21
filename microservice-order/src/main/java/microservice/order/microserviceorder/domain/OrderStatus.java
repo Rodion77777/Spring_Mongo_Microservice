@@ -8,7 +8,6 @@ import lombok.ToString;
  * The OrderStatus enumeration.
  */
 @Getter
-@ToString
 @AllArgsConstructor
 public enum OrderStatus
 {
@@ -21,4 +20,9 @@ public enum OrderStatus
     RETURNED("RETURNED");
 
     private final String value;
+
+    @Override
+    public String toString() {
+        return value;
+    }
 }
