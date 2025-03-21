@@ -12,5 +12,10 @@ public enum HealthStatus
     UP("UP"),
     DOWN("DOWN");
 
-    private final String value;
+    private final String status;
+
+    @Override
+    public String toString() {
+        return status;
+    }
 }
