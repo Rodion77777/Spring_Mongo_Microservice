@@ -15,3 +15,16 @@ server:
  port: 8080
  servlet:
    context-path: /order
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, prometheus, info, metrics
+
+    health:
+      show-details: always
+
+  metrics:
+    tags:
+      application: MonitoringOrderMicroservice
