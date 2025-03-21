@@ -7,8 +7,6 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import microservice.order.microserviceorder.domain.OrderStatus;
-import microservice.order.microserviceorder.domain.PaymentType;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -19,6 +17,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.io.Serial;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -71,4 +70,27 @@ public class Order implements Serializable
     @Field("products")
     @NotEmpty
     private Set<@Valid Product> products;
+
+    public Order addProduct(Product product) {
+        this.products.add(product);
+        return this;
+    }
+
+    public Order removeProduct(Product product) {
+        this.products.remove(product);
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Order order = (Order) o;
+        return id.equals(order.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
