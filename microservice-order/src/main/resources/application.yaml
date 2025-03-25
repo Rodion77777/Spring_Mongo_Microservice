@@ -3,7 +3,8 @@ spring:
    name: microservice-order
 
    microservice-customer:
-     url: https://customer.microservicesdemo.net/customer/api/v1/
+     url: https://localhost:8080/customer/api/v1/
+     #url: https://customer.microservicesdemo.net/customer/api/v1/
 
  data:
    mongodb:
@@ -12,7 +13,7 @@ spring:
      database: order
 
 server:
- port: 8080
+ port: 8090
  servlet:
    context-path: /order
 
