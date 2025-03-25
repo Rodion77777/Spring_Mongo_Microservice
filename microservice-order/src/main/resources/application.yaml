@@ -9,8 +9,12 @@ spring:
  data:
    mongodb:
      #uri: mongodb+srv://mkmongouser:Secret_Password@cluster0.yu4x6.mongodb.net
-     uri: mongodb://AdminUser:123456qwerty@localhost:27017/CustomerOrderDB.collection
-     database: order
+     #uri: mongodb://AdminUser:123456qwerty@localhost:27017/CustomerOrderDB?authSource=admin&authMechanism=SCRAM-SHA-256
+     #database: CustomerOrderDB
+     #authentication-database: admin
+     #username: AdminUser
+     #password: 123456qwerty
+     #authentication-mechanism: SCRAM-SHA-256
 
 server:
  port: 8090
