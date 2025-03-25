@@ -3,7 +3,7 @@ spring:
    name: microservice-order
 
    microservice-customer:
-     url: https://localhost:8080/customer/api/v1/
+     url: http://localhost:8080/customer/api/v1/
      #url: https://customer.microservicesdemo.net/customer/api/v1/
 
  data:
