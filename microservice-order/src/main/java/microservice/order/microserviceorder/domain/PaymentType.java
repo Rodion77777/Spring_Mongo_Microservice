@@ -5,5 +5,5 @@ package microservice.order.microserviceorder.domain;
  */
 public enum PaymentType
 {
-    CREDIT_CART, BANK_TRANSFER, PAYPAL
+    CREDIT_CARD, BANK_TRANSFER, PAYPAL
 }
