@@ -6,7 +6,7 @@ import org.springframework.http.HttpHeaders;
 
 @NoArgsConstructor
 @Slf4j
-public class HeaderUtil
+public final class HeaderUtil
 {
     public static HttpHeaders createAlert
             (String applicationName, String message, String param)
