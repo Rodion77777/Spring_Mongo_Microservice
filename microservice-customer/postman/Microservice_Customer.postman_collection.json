@@ -90,7 +90,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customers/67e5958b0f037955f207ca9a",
+							"raw": "http://localhost:8080/customer/api/v1/customers/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -101,7 +101,7 @@
 								"api",
 								"v1",
 								"customers",
-								"67e5958b0f037955f207ca9a"
+								""
 							]
 						}
 					},
@@ -189,7 +189,7 @@
 					"response": []
 				},
 				{
-					"name": "Get Order",
+					"name": "Get all Orders",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -211,13 +211,36 @@
 					"response": []
 				},
 				{
+					"name": "Get Order by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/order/api/v1/orders/67e5db69fbec922ada722a71",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"order",
+								"api",
+								"v1",
+								"orders",
+								"67e5db69fbec922ada722a71"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Create Order",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customerId\": \"67e356ef0a5c0140a8e02a59\",\r\n    \"paymentMethod\": \"CREDIT_CARD\",\r\n    \"paymentDetails\": \"Visa **** 1234\",\r\n    \"shippingAddress\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"Zaporizhzhia\",\r\n        \"state\": \"Zaporizhzhia Obl\",\r\n        \"zipCode\": \"12345\",\r\n        \"country\": \"Ukraine\"\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"id\": \"200\",\r\n            \"name\": \"Notebook\",\r\n            \"manufacturerName\": \"ASUS\",\r\n            \"price\": 675.75,\r\n            \"quantity\": 1\r\n        },{\r\n            \"id\": \"201\",\r\n            \"name\": \"Nettop\",\r\n            \"manufacturerName\": \"Lenovo\",\r\n            \"price\": 425.75,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"customerId\": \"67e4761f18501b1c4adb3e34\",\r\n    \"paymentMethod\": \"CREDIT_CARD\",\r\n    \"paymentDetails\": \"Visa **** 1234\",\r\n    \"shippingAddress\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"Zaporizhzhia\",\r\n        \"state\": \"Zaporizhzhia Obl\",\r\n        \"zipCode\": \"12345\",\r\n        \"country\": \"Ukraine\"\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"id\": \"200\",\r\n            \"name\": \"Notebook\",\r\n            \"manufacturerName\": \"ASUS\",\r\n            \"price\": 675.75,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -236,6 +259,29 @@
 								"api",
 								"v1",
 								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8090/order/api/v1/orders/67e356f32ac47369a4bdfd37",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"order",
+								"api",
+								"v1",
+								"orders",
+								"67e356f32ac47369a4bdfd37"
 							]
 						}
 					},
