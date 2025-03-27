@@ -19,6 +19,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -65,12 +66,12 @@ public class CustomerResource
      * or with status {@code 500 (Internal Server Error)} if the customer couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PutMapping("/customers")
-    public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) throws URISyntaxException {
+    @PutMapping("/customers/{customerId}")
+    public ResponseEntity<Customer> updateCustomer(@PathVariable String customerId, @Valid @RequestBody Customer customer) throws URISyntaxException {
         log.debug("REST request to update Customer : {}", customer);
-        if (customer.getId() == null) {
-            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
-        }
+        if (customerId == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        Optional<Customer> existingEntityOptional = customerRepository.findById(customerId);
+        if (existingEntityOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         final var result = customerRepository.save(customer);
         return ResponseEntity.ok()
                 .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, customer.getId()))
