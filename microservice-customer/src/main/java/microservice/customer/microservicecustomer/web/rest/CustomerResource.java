@@ -72,16 +72,21 @@ public class CustomerResource
         if (customer.getId() == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         Optional<Customer> existingEntityOptional = customerRepository.findById(customer.getId());
         if (existingEntityOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-
-        Customer existingCustomer = existingEntityOptional.get();
-        existingCustomer.setFirstName(customer.getFirstName());
-        existingCustomer.setMiddleName(customer.getMiddleName());
-        existingCustomer.setLastName(customer.getLastName());
-
+        Customer existingCustomer = getUpdatetCustomer(customer, existingEntityOptional);
         final var result = customerRepository.save(existingCustomer);
         return ResponseEntity.ok()
                 .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, customer.getId()))
                 .body(result);
+    }
+
+    private static Customer getUpdatetCustomer(Customer customer, Optional<Customer> existingEntityOptional) {
+        Customer existingCustomer = existingEntityOptional.get();
+        if (customer.getFirstName() != null) existingCustomer.setFirstName(customer.getFirstName());
+        if (customer.getMiddleName() != null) existingCustomer.setMiddleName(customer.getMiddleName());
+        if (customer.getLastName() != null) existingCustomer.setLastName(customer.getLastName());
+        if (customer.getPaymentDetails() != null) existingCustomer.setPaymentDetails(customer.getPaymentDetails());
+        if (customer.getBillingAddress() != null) existingCustomer.setBillingAddress(existingCustomer.getBillingAddress());
+        return existingCustomer;
     }
 
     /**
