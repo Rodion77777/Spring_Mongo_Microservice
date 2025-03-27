@@ -14,7 +14,7 @@ public class CustomerService
         return existingCustomer;
     }
 
-    private static Address updateBillingAddressFrom(Address address, Address existingAddress) {
+    public static Address updateBillingAddressFrom(Address address, Address existingAddress) {
         if (address.getId() != null) existingAddress.setId(address.getId());
         if (address.getStreetName() != null) existingAddress.setStreetName(address.getStreetName());
         if (address.getStreetNumber() != null) existingAddress.setStreetNumber(address.getStreetNumber());
