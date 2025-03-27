@@ -71,10 +71,8 @@ public class CustomerResource
     public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) {
         log.debug("REST request to update Customer : {}", customer);
         if (customer.getId() == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
-
         Customer existingCustomer = customerRepository.findById(customer.getId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
-
         Customer savedCustomer = CustomerService.updateCustomerFrom(customer, existingCustomer);
         final var result = customerRepository.save(savedCustomer);
         return ResponseEntity.ok()
@@ -85,7 +83,6 @@ public class CustomerResource
     /**
      * {@code GET  /customers} : get all the customers.
      *
-
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of customers in body.
      */
     @GetMapping("/customers")
@@ -116,7 +113,12 @@ public class CustomerResource
     @DeleteMapping("/customers/{id}")
     public ResponseEntity<Void> deleteCustomer(@PathVariable String id) {
         log.debug("REST request to delete Customer : {}", id);
+        if (id == null || id.trim().isEmpty()) throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "ID must not be null");
+        if (!customerRepository.existsById(id)) throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Customer not found");
         customerRepository.deleteById(id);
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id)).build();
+        return ResponseEntity
+                .noContent()
+                .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id))
+                .build();
     }
 }
