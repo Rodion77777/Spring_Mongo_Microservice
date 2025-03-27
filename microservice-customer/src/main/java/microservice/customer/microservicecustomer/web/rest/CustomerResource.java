@@ -71,9 +71,11 @@ public class CustomerResource
     public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) throws URISyntaxException {
         log.debug("REST request to update Customer : {}", customer);
         if (customer.getId() == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
-        Optional<Customer> existingEntityOptional = customerRepository.findById(customer.getId());
-        if (existingEntityOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        Customer existingCustomer = CustomerService.updateCustomerFrom(customer, existingEntityOptional.get());
+
+        Customer existingEntityOptional = customerRepository.findById(customer.getId())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+
+        Customer existingCustomer = CustomerService.updateCustomerFrom(customer, existingEntityOptional);
         final var result = customerRepository.save(existingCustomer);
         return ResponseEntity.ok()
                 .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, customer.getId()))
