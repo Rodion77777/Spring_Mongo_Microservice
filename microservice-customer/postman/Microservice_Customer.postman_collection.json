@@ -60,7 +60,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"firstName\": \"Saiko\",\n    \"middleName\": \"Rodion\",\n    \"lastName\": \"Slava\",\n    \"paymentDetails\": \"Credit Card\"\n}",
+							"raw": "{\n    \"firstName\": \"Arnold\",\n    \"middleName\": \"Hey\",\n    \"lastName\": \"Helga\",\n    \"paymentDetails\": \"Paypal\",\n    \"billingAddress\": {\n            \"id\": \"67e356f32ac47369a4bdfd36\",\n            \"streetName\": null,\n            \"streetNumber\": null,\n            \"additionalInfo\": null,\n            \"zipCode\": \"12345\",\n            \"city\": \"Zaporizhzhia\",\n            \"state\": \"Zaporizhzhia Obl\",\n            \"country\": \"Ukraine\"\n        }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -87,8 +87,40 @@
 				{
 					"name": "Delete Customer",
 					"request": {
-						"method": "GET",
+						"method": "DELETE",
 						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/api/v1/customers/67e5958b0f037955f207ca9a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"api",
+								"v1",
+								"customers",
+								"67e5958b0f037955f207ca9a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"67e4761f18501b1c4adb3e34\",\r\n    \"firstName\": \"Arnold\",\r\n    \"middleName\": \"Aaron\",\r\n    \"lastName\": \"HELGA\",\r\n    \"billingAddress\": {\r\n            \"zipCode\": \"136547\",\r\n            \"city\": \"Manhatten\",\r\n            \"state\": \"-\",\r\n            \"country\": \"USA\"\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:8080/customer/api/v1/customers",
 							"protocol": "http",
@@ -101,6 +133,29 @@
 								"api",
 								"v1",
 								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/customer/api/v1/customers/67e4761f18501b1c4adb3e34",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"customer",
+								"api",
+								"v1",
+								"customers",
+								"67e4761f18501b1c4adb3e34"
 							]
 						}
 					},
@@ -162,7 +217,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customerId\": \"67e30f9c65946b1da0ffe7b2\",\r\n    \"paymentMethod\": \"CREDIT_CARD\",\r\n    \"paymentDetails\": \"Visa **** 1234\",\r\n    \"shippingAddress\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"Zaporizhzhia\",\r\n        \"state\": \"Zaporizhzhia Obl\",\r\n        \"zipCode\": \"12345\",\r\n        \"country\": \"Ukraine\"\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"id\": \"200\",\r\n            \"name\": \"Notebook\",\r\n            \"manufacturerName\": \"ASUS\",\r\n            \"price\": 675.75,\r\n            \"quantity\": 1\r\n        },{\r\n            \"id\": \"201\",\r\n            \"name\": \"Nettop\",\r\n            \"manufacturerName\": \"Lenovo\",\r\n            \"price\": 425.75,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"raw": "{\r\n    \"customerId\": \"67e356ef0a5c0140a8e02a59\",\r\n    \"paymentMethod\": \"CREDIT_CARD\",\r\n    \"paymentDetails\": \"Visa **** 1234\",\r\n    \"shippingAddress\": {\r\n        \"street\": \"123 Main St\",\r\n        \"city\": \"Zaporizhzhia\",\r\n        \"state\": \"Zaporizhzhia Obl\",\r\n        \"zipCode\": \"12345\",\r\n        \"country\": \"Ukraine\"\r\n    },\r\n    \"products\": [\r\n        {\r\n            \"id\": \"200\",\r\n            \"name\": \"Notebook\",\r\n            \"manufacturerName\": \"ASUS\",\r\n            \"price\": 675.75,\r\n            \"quantity\": 1\r\n        },{\r\n            \"id\": \"201\",\r\n            \"name\": \"Nettop\",\r\n            \"manufacturerName\": \"Lenovo\",\r\n            \"price\": 425.75,\r\n            \"quantity\": 1\r\n        }\r\n    ]\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
