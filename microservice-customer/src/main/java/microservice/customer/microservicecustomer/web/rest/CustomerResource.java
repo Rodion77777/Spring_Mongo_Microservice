@@ -66,13 +66,19 @@ public class CustomerResource
      * or with status {@code 500 (Internal Server Error)} if the customer couldn't be updated.
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
-    @PutMapping("/customers/{customerId}")
-    public ResponseEntity<Customer> updateCustomer(@PathVariable String customerId, @Valid @RequestBody Customer customer) throws URISyntaxException {
+    @PutMapping("/customers")
+    public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) throws URISyntaxException {
         log.debug("REST request to update Customer : {}", customer);
-        if (customerId == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
-        Optional<Customer> existingEntityOptional = customerRepository.findById(customerId);
+        if (customer.getId() == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
+        Optional<Customer> existingEntityOptional = customerRepository.findById(customer.getId());
         if (existingEntityOptional.isEmpty()) throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-        final var result = customerRepository.save(customer);
+
+        Customer existingCustomer = existingEntityOptional.get();
+        existingCustomer.setFirstName(customer.getFirstName());
+        existingCustomer.setMiddleName(customer.getMiddleName());
+        existingCustomer.setLastName(customer.getLastName());
+
+        final var result = customerRepository.save(existingCustomer);
         return ResponseEntity.ok()
                 .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, customer.getId()))
                 .body(result);
