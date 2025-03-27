@@ -68,15 +68,15 @@ public class CustomerResource
      * @throws URISyntaxException if the Location URI syntax is incorrect.
      */
     @PutMapping("/customers")
-    public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) throws URISyntaxException {
+    public ResponseEntity<Customer> updateCustomer(@Valid @RequestBody Customer customer) {
         log.debug("REST request to update Customer : {}", customer);
         if (customer.getId() == null) throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
 
-        Customer existingEntityOptional = customerRepository.findById(customer.getId())
+        Customer existingCustomer = customerRepository.findById(customer.getId())
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
-        Customer existingCustomer = CustomerService.updateCustomerFrom(customer, existingEntityOptional);
-        final var result = customerRepository.save(existingCustomer);
+        Customer savedCustomer = CustomerService.updateCustomerFrom(customer, existingCustomer);
+        final var result = customerRepository.save(savedCustomer);
         return ResponseEntity.ok()
                 .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, customer.getId()))
                 .body(result);
