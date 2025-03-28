@@ -15,17 +15,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/health",
-							"protocol": "http",
+							"raw": "{{url_customer_health}}",
 							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"api",
-								"v1",
-								"health"
+								"{{url_customer_health}}"
 							]
 						}
 					},
@@ -37,17 +29,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customers",
-							"protocol": "http",
+							"raw": "{{url_customer}}",
 							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"api",
-								"v1",
-								"customers"
+								"{{url_customer}}"
 							]
 						}
 					},
@@ -68,17 +52,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customers",
-							"protocol": "http",
+							"raw": "{{url_customer}}",
 							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"api",
-								"v1",
-								"customers"
+								"{{url_customer}}"
 							]
 						}
 					},
@@ -90,17 +66,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customers/",
-							"protocol": "http",
+							"raw": "{{url_customer}}/",
 							"host": [
-								"localhost"
+								"{{url_customer}}"
 							],
-							"port": "8080",
 							"path": [
-								"customer",
-								"api",
-								"v1",
-								"customers",
 								""
 							]
 						}
@@ -122,17 +92,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customers",
-							"protocol": "http",
+							"raw": "{{url_customer}}",
 							"host": [
-								"localhost"
-							],
-							"port": "8080",
-							"path": [
-								"customer",
-								"api",
-								"v1",
-								"customers"
+								"{{url_customer}}"
 							]
 						}
 					},
@@ -144,17 +106,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customers/67e4761f18501b1c4adb3e34",
-							"protocol": "http",
+							"raw": "{{url_customer}}/67e4761f18501b1c4adb3e34",
 							"host": [
-								"localhost"
+								"{{url_customer}}"
 							],
-							"port": "8080",
 							"path": [
-								"customer",
-								"api",
-								"v1",
-								"customers",
 								"67e4761f18501b1c4adb3e34"
 							]
 						}
@@ -172,17 +128,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/order/api/v1/health",
-							"protocol": "http",
+							"raw": "{{url_order_health}}",
 							"host": [
-								"localhost"
-							],
-							"port": "8090",
-							"path": [
-								"order",
-								"api",
-								"v1",
-								"health"
+								"{{url_order_health}}"
 							]
 						}
 					},
@@ -194,17 +142,9 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/order/api/v1/orders",
-							"protocol": "http",
+							"raw": "{{url_order}}",
 							"host": [
-								"localhost"
-							],
-							"port": "8090",
-							"path": [
-								"order",
-								"api",
-								"v1",
-								"orders"
+								"{{url_order}}"
 							]
 						}
 					},
@@ -216,17 +156,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/order/api/v1/orders/67e5db69fbec922ada722a71",
-							"protocol": "http",
+							"raw": "{{url_order}}/67e5db69fbec922ada722a71",
 							"host": [
-								"localhost"
+								"{{url_order}}"
 							],
-							"port": "8090",
 							"path": [
-								"order",
-								"api",
-								"v1",
-								"orders",
 								"67e5db69fbec922ada722a71"
 							]
 						}
@@ -248,17 +182,9 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8090/order/api/v1/orders",
-							"protocol": "http",
+							"raw": "{{url_order}}",
 							"host": [
-								"localhost"
-							],
-							"port": "8090",
-							"path": [
-								"order",
-								"api",
-								"v1",
-								"orders"
+								"{{url_order}}"
 							]
 						}
 					},
@@ -270,17 +196,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8090/order/api/v1/orders/67e356f32ac47369a4bdfd37",
-							"protocol": "http",
+							"raw": "{{url_order}}/67e356f32ac47369a4bdfd37",
 							"host": [
-								"localhost"
+								"{{url_order}}"
 							],
-							"port": "8090",
 							"path": [
-								"order",
-								"api",
-								"v1",
-								"orders",
 								"67e356f32ac47369a4bdfd37"
 							]
 						}
@@ -307,17 +227,11 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customerOrders/67e4761f18501b1c4adb3e34",
-							"protocol": "http",
+							"raw": "{{url_customer_order}}/67e4761f18501b1c4adb3e34",
 							"host": [
-								"localhost"
+								"{{url_customer_order}}"
 							],
-							"port": "8080",
 							"path": [
-								"customer",
-								"api",
-								"v1",
-								"customerOrders",
 								"67e4761f18501b1c4adb3e34"
 							]
 						}
@@ -328,7 +242,16 @@
 					"name": "Update Order",
 					"request": {
 						"method": "PUT",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{url_customer_order}}/",
+							"host": [
+								"{{url_customer_order}}"
+							],
+							"path": [
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -338,17 +261,11 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/customer/api/v1/customerOrders/67e4761f18501b1c4adb3e34/1265496",
-							"protocol": "http",
+							"raw": "{{url_customer_order}}/67e4761f18501b1c4adb3e34/1265496",
 							"host": [
-								"localhost"
+								"{{url_customer_order}}"
 							],
-							"port": "8080",
 							"path": [
-								"customer",
-								"api",
-								"v1",
-								"customerOrders",
 								"67e4761f18501b1c4adb3e34",
 								"1265496"
 							]
@@ -360,7 +277,16 @@
 					"name": "Get Order by id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{url_customer_order}}/67e4761f18501b1c4adb3e34",
+							"host": [
+								"{{url_customer_order}}"
+							],
+							"path": [
+								"67e4761f18501b1c4adb3e34"
+							]
+						}
 					},
 					"response": []
 				},
@@ -368,7 +294,16 @@
 					"name": "Get all Order by Customer id",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{url_customer_order}}/",
+							"host": [
+								"{{url_customer_order}}"
+							],
+							"path": [
+								""
+							]
+						}
 					},
 					"response": []
 				}
