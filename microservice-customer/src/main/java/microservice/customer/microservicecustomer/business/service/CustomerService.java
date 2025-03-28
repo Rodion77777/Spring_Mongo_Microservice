@@ -10,7 +10,9 @@ public class CustomerService
         if (customer.getMiddleName() != null) existingCustomer.setMiddleName(customer.getMiddleName());
         if (customer.getLastName() != null) existingCustomer.setLastName(customer.getLastName());
         if (customer.getPaymentDetails() != null) existingCustomer.setPaymentDetails(customer.getPaymentDetails());
-        if (customer.getBillingAddress() != null) existingCustomer.setBillingAddress(updateBillingAddressFrom(customer.getBillingAddress(), existingCustomer.getBillingAddress()));
+        if (customer.getBillingAddress() != null) existingCustomer.setBillingAddress(
+                updateBillingAddressFrom(customer.getBillingAddress(),
+                existingCustomer.getBillingAddress() == null ? new Address() : existingCustomer.getBillingAddress()));
         return existingCustomer;
     }
 
