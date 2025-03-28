@@ -20,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1")
@@ -118,10 +119,14 @@ public class OrderResource
     @Transactional
     public ResponseEntity<Void> deleteOrder(@PathVariable String id) {
         logger.debug("REST request to delete Order : {}", id);
-        final var orderOptional = orderRepository.findById(id);
+
+        final Optional<Order> orderOptional = orderRepository.findById(id);
         orderRepository.deleteById(id);
-        if (orderOptional.isPresent())
-            orderService.deleteOrder(orderOptional.get());
-        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id)).build();
+        orderOptional.ifPresent(orderService::deleteOrder);
+
+        return ResponseEntity
+                .noContent()
+                .headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id))
+                .build();
     }
 }
