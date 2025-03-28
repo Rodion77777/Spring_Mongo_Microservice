@@ -374,5 +374,54 @@
 				}
 			]
 		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_customer_health",
+			"value": "http://localhost:8080/customer/api/v1/health",
+			"type": "string"
+		},
+		{
+			"key": "url_customer",
+			"value": "http://localhost:8080/customer/api/v1/customers",
+			"type": "string"
+		},
+		{
+			"key": "url_customer_order",
+			"value": "http://localhost:8080/customer/api/v1/customerOrders",
+			"type": "string"
+		},
+		{
+			"key": "url_order_health",
+			"value": "http://localhost:8090/order/api/v1/health",
+			"type": "string"
+		},
+		{
+			"key": "url_order",
+			"value": "http://localhost:8090/order/api/v1/orders",
+			"type": "string"
+		}
 	]
 }
