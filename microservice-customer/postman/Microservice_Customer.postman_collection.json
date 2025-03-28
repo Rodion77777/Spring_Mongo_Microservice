@@ -219,7 +219,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"1654943126154\",\r\n    \"customerId\": \"67e4761f18501b1c4adb3e34\"\r\n}",
+							"raw": "{\r\n    \"id\": \"16549431261542\",\r\n    \"customerId\": \"67e4761f18501b1c4adb3e34\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -243,13 +243,22 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"16549431261542\",\r\n    \"customerId\": \"67e46d8e18501b1c4adb3e33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{url_customer_order}}/",
+							"raw": "{{url_customer_order}}/67e4761f18501b1c4adb3e34",
 							"host": [
 								"{{url_customer_order}}"
 							],
 							"path": [
-								""
+								"67e4761f18501b1c4adb3e34"
 							]
 						}
 					},
@@ -274,17 +283,18 @@
 					"response": []
 				},
 				{
-					"name": "Get Order by id",
+					"name": "Get Order by c_id + id",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url_customer_order}}/67e4761f18501b1c4adb3e34",
+							"raw": "{{url_customer_order}}/67e4761f18501b1c4adb3e34/16549431261542",
 							"host": [
 								"{{url_customer_order}}"
 							],
 							"path": [
-								"67e4761f18501b1c4adb3e34"
+								"67e4761f18501b1c4adb3e34",
+								"16549431261542"
 							]
 						}
 					},
@@ -296,12 +306,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url_customer_order}}/",
+							"raw": "{{url_customer_order}}/67e4761f18501b1c4adb3e34",
 							"host": [
 								"{{url_customer_order}}"
 							],
 							"path": [
-								""
+								"67e4761f18501b1c4adb3e34"
 							]
 						}
 					},
